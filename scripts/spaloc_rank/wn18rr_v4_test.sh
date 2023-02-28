@@ -1,0 +1,33 @@
+cd ..
+jac-run scripts/graph/learn_rank_tasks.py \
+    --task grail-WN18RR_v4_ind \
+    --epochs 300 \
+    --test-interval 5 \
+    --save-interval 5 \
+    --early-stop 1e-8 \
+    --use-gpu \
+    --test-number-begin 100 \
+    --test-number-step 0 \
+    --test-number-end 100 \
+    --model nlm \
+    --nlm-norm tanh \
+    --nlm-depth 5 \
+    --nlm-attributes 16 \
+    --seed 42 \
+    --batch-size 500 \
+    --sparsity-loss-ratio 0 \
+    --subgraph single \
+    --single-link-pred-bridge path \
+    --subgraph-size 10 \
+    --link-pred-k 3 \
+    --resample 100000 \
+    --test-subgraph-size 10 \
+    --test-batch-size 20\
+    --epoch-size 500 \
+    --test-epoch-size 50 \
+    --lr 0.01 \
+    --aug-node-feature-dim 0 \
+    --num-rels 9 \
+    --task-is-directed \
+    --test-only \
+    --load "log/nlm_rank/WN18RR_v4_ind/checkpoints/checkpoint_85.pth"

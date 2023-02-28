@@ -1,0 +1,34 @@
+cd ..
+jac-run scripts/graph/learn_graph_tasks.py \
+    --task kg-NELL-995 \
+    --epochs 100 \
+    --test-interval 1 \
+    --save-interval 5 \
+    --early-stop 1e-8 \
+    --use-gpu \
+    --test-number-begin 100 \
+    --test-number-step 0 \
+    --test-number-end 100 \
+    --model nlm \
+    --nlm-norm sigmoid \
+    --nlm-depth 6 \
+    --nlm-attributes 64 \
+    --seed 666 \
+    --batch-size 64 \
+    --sparsity-loss-ratio 0 \
+    --subgraph single \
+    --single-link-pred-bridge path \
+    --subgraph-size 20 \
+    --link-pred-k 3 \
+    --resample 100000 \
+    --test-subgraph-size 20 \
+    --test-batch-size 64 \
+    --epoch-size 500 \
+    --test-epoch-size 50 \
+    --lr 0.001 \
+    --aug-node-feature-dim 0 \
+    --num-rels 199 \
+    --num-workers 2 \
+    --task-is-directed \
+    --nlm-reducer mean \
+    --dump-dir log/nlm_single/NELL-995
